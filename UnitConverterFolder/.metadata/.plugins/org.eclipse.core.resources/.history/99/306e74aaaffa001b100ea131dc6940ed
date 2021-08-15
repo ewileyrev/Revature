@@ -1,0 +1,31 @@
+package main;
+import java.util.Scanner;
+
+public class Converter {
+	
+	public static void main(String[] args) {
+		int menuSelection=0;
+		int lastMenuOption=1;
+		
+		while(menuSelection != lastMenuOption){
+			System.out.println("Please select an option");
+			System.out.println("1. Teaspoons to Cups");
+			System.out.println("2. Cups to Teaspoons");
+			System.out.println("3. Miles to Kilometers");
+			System.out.println("4. Kilometers to Miles");
+			System.out.println("5. US Gallons to Imperial Gallons");
+			System.out.println("6. Imperial Gallons to US Gallons");
+			System.out.println("7. Quit");
+			
+			Scanner s = new Scanner(System.in);
+			String option = s.nextLine();
+			System.out.println(""+option);
+			
+
+
+		}
+		
+		
+	}
+	
+}

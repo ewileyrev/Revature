@@ -1,0 +1,77 @@
+package main;
+import java.util.Scanner;
+
+
+public class Converter {
+	public static void cups(double x) {
+		int y = 0;
+	}
+	
+	public static void main(String[] args) {
+		
+		double value;
+		int menuSelection=0;
+		int lastMenuOption=1;		
+		
+		
+		while(menuSelection != lastMenuOption){
+			//Print out options and ask for selection
+			System.out.println("Please select an conversion");
+			System.out.println("1. Teaspoons to Cups");
+			System.out.println("2. Cups to Teaspoons");
+			System.out.println("3. Miles to Kilometers");
+			System.out.println("4. Kilometers to Miles");
+			System.out.println("5. US Gallons to Imperial Gallons");
+			System.out.println("6. Imperial Gallons to US Gallons");
+			System.out.println("7. Quit");
+			lastMenuOption = menuSelection;
+		}
+			//Get user units
+			Scanner s = new Scanner(System.in);
+			String option = s.nextLine();
+			
+			System.out.println("Please enter the value");
+			Scanner v = new Scanner(System.in);
+			String value1 = v.nextLine();
+			value = Double.parseDouble(value1);
+			
+			//use user input to do calculations
+			switch(option) {
+			case "1":
+				cups(value);
+				break;
+			case "2":
+				
+
+				break;
+			case "3":
+				
+
+				break;
+			case "4":
+				
+
+				break;
+			case "5":
+				
+
+				break;
+			case "6":
+				
+
+				break;
+			case "7":
+				System.out.println("Quitting");
+				break;
+			default:
+				System.out.println("Not a valid option");
+				System.out.println("Quitting");
+				break;
+			}
+			
+
+			return;
+			}
+	
+	
+}

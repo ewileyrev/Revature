@@ -1,0 +1,74 @@
+package main;
+import java.util.Scanner;
+
+
+public class Converter {
+	
+	public static void main(String[] args) {
+		
+		int menuSelection=0;
+		int lastMenuOption=1;
+		String unit;
+		int x = 0;
+		
+		
+		while(menuSelection != lastMenuOption){
+			//Print out options and ask for selection
+			System.out.println("Please select an conversion");
+			System.out.println("1. Teaspoons to Cups");
+			System.out.println("2. Cups to Teaspoons");
+			System.out.println("3. Miles to Kilometers");
+			System.out.println("4. Kilometers to Miles");
+			System.out.println("5. US Gallons to Imperial Gallons");
+			System.out.println("6. Imperial Gallons to US Gallons");
+			System.out.println("7. Quit");
+			
+			//Get user input
+			Scanner s = new Scanner(System.in);
+			String option = s.nextLine();
+			
+			//use user input to do calculations
+			switch(option) {
+			case "1":
+				unit = "Cups";
+				
+				break;
+			case "2":
+				unit = "Teaspoons";
+
+				break;
+			case "3":
+				unit = "Kilometers";
+
+				break;
+			case "4":
+				unit = "Miles";
+
+				break;
+			case "5":
+				unit = "Imperial Gallons";
+
+				break;
+			case "6":
+				unit = "US Gallons";
+
+				break;
+			case "7":
+				return;
+			default:
+				System.out.println("Not a valid option");
+				System.out.println("Quiting");
+				return;
+			}
+			
+			//display result
+			System.out.println(x+" " +unit);
+			
+
+			return;
+		}
+		
+		
+	}
+	
+}

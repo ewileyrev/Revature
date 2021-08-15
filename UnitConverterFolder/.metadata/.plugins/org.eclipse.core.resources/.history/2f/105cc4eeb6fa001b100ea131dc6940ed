@@ -1,0 +1,99 @@
+package main;
+import java.util.Scanner;
+
+
+public class Converter {
+	//conversions
+	public static void cups(double x) {
+		double y = x/48;
+		System.out.println(String.format("%.2f",y)+" Cups");
+	}
+	
+	public static void Teaspoons(double x) {
+		double y = x*48;
+		System.out.println(String.format("%.2f",y)+" Teaspoons");
+	}
+	
+	public static void Kilometers(double x) {
+		double y = x*1.609;
+		System.out.println(String.format("%.2f",y)+" Kilometers");
+	}
+	
+	public static void miles(double x) {
+		double y = x/1.609;
+		System.out.println(String.format("%.2f",y)+" Miles");
+	}
+	
+	public static void imperialGallons(double x) {
+		double y = x/1.201;
+		System.out.println(String.format("%.2f",y)+" Imperial Gallons");
+	}
+	
+	public static void usGallons(double x) {
+		double y = x*1.201;
+		System.out.println(String.format("%.2f",y)+" US Gallons");
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		int menuSelection=0;
+		int lastMenuOption=1;		
+		
+		while(menuSelection != lastMenuOption){
+			//Print out options and ask for selection
+			System.out.println("Please select an conversion");
+			System.out.println("1. Teaspoons to Cups");
+			System.out.println("2. Cups to Teaspoons");
+			System.out.println("3. Miles to Kilometers");
+			System.out.println("4. Kilometers to Miles");
+			System.out.println("5. US Gallons to Imperial Gallons");
+			System.out.println("6. Imperial Gallons to US Gallons");
+			System.out.println("7. Quit");
+			lastMenuOption = menuSelection;
+		}
+			//Get user units
+			Scanner s = new Scanner(System.in);
+			String option = s.nextLine();
+			
+			System.out.println("Please enter the value");
+			Scanner v = new Scanner(System.in);
+			String value1 = v.nextLine();
+			double value = Double.parseDouble(value1);
+			
+			//use user input to do calculations
+			switch(option) {
+			case "1":
+				cups(value);
+				break;
+			case "2":
+				Teaspoons(value);
+				break;
+			case "3":
+				Kilometers(value);
+				break;
+			case "4":
+				miles(value);
+				break;
+			case "5":
+				imperialGallons(value);
+				break;
+			case "6":
+				usGallons(value);
+				break;
+			case "7":
+				System.out.println("Quitting");
+				break;
+			default:
+				System.out.println("Not a valid option");
+				System.out.println("Quitting");
+				break;
+			}
+			
+
+			return;
+			}
+	
+	
+}
