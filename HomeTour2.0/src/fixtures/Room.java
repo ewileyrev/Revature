@@ -1,150 +1,184 @@
 package fixtures;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import game.Player;
 import game.RoomManager;
 
+
 public class Room extends Fixture{
+	Map<String,Room> living = new HashMap<>();
+	Map<String,Room> dinning = new HashMap<>();
+	Map<String,Room> kitchen = new HashMap<>();
+	Map<String,Room> laundary = new HashMap<>();
+	Map<String,Room> master = new HashMap<>();
+	Map<String,Room> hall = new HashMap<>();
+	Map<String,Room> bath1 = new HashMap<>();
+	Map<String,Room> bed1 = new HashMap<>();
+	Map<String,Room> mbath = new HashMap<>();
+	Map<String,Room> hall2 = new HashMap<>();
+	Map<String,Room> bath2 = new HashMap<>();
+	Map<String,Room> bed2 = new HashMap<>();
 	
-	private Room[] exits;
+	public void init() {
+		RoomManager r = new RoomManager();
+		r.init();
+		living.put("North", r.rooms[5]);
+		living.put("East", r.rooms[1]);
+		living.put("West", r.rooms[4]);
+		
+		dinning.put("North", r.rooms[2]);
+		dinning.put("West", r.rooms[0]);
+		
+		kitchen.put("North", r.rooms[3]);
+		kitchen.put("South", r.rooms[1]);
+
+		laundary.put("South",r.rooms[2]);
+
+		master.put("East",r.rooms[0]);
+		master.put("West",r.rooms[8]);
+		
+		hall.put("North",r.rooms[6]);
+		hall.put("East",r.rooms[7]);
+		hall.put("South",r.rooms[0]);
+		hall.put("West",r.rooms[9]);
+
+		bath1.put("South",r.rooms[5]);
+
+		bed1.put("West",r.rooms[5]);
+
+		mbath.put("East",r.rooms[4]);
+
+		hall2.put("East",r.rooms[11]);
+		hall2.put("South",r.rooms[5]);
+		hall2.put("West",r.rooms[10]);
+
+		bath2.put("East",r.rooms[9]);
+
+		bed2.put("West",r.rooms[9]);
+
+
+	}
 
 	public Room(String name, String shortDescription, String longDescription) {
 		super(name, shortDescription, longDescription);
-		this.exits = new Room[4]; // size is your choice
+		
 	}
 		
-	public Room[] getExits(Room currentRoom) {
+	public Map<String, Room> getExits(Room currentRoom) {
 		RoomManager r = new RoomManager();
 		r.init();
+		init();
 		String a = currentRoom.getname();
+		
+		
 		switch (a) {
 		case "The Living Room":
-			System.out.println("Exits");
-			System.out.println("North: " + r.rooms[5].getname());
-			System.out.println("East: "+r.rooms[1].getname());
-			System.out.println("West: "+r.rooms[4].getname());
 			
-			exits[0] = r.rooms[5];
-			exits[1] = r.rooms[1];
-			exits[3] = r.rooms[4];
-
+			for (Entry<String, Room> entry : living.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 			
-			break;
+			return living;
 		case "The Dinning Room":
-			System.out.println("Exits");
-			System.out.println("North: "+r.rooms[2].getname());
-			System.out.println("west: "+r.rooms[0].getname());
+			for (Entry<String, Room> entry : dinning.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 			
-			exits[0] = r.rooms[2];
-			exits[3] = r.rooms[0];
-			
-			break;
+			return dinning;
 		case "The Kitchen":
-			System.out.println("Exits");
-			System.out.println("North "+r.rooms[3].getname());
-			System.out.println("South: "+r.rooms[1].getname());
+			for (Entry<String, Room> entry : kitchen.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 			
-			exits[0] = r.rooms[3];
-			exits[2] = r.rooms[1];
-					
-			break;
+			return kitchen;
 		case "The Laundary Room":
-			System.out.println("Exits");
-			System.out.println("South: "+r.rooms[2].getname());
-						
-			exits[2] = r.rooms[2];
+			for (Entry<String, Room> entry : laundary.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 			
-			break;
+			return laundary;
 		case "The Master Bedroom":
-			System.out.println("Exits");
-			System.out.println("East: "+r.rooms[0].getname());
-			System.out.println("West: "+r.rooms[8].getname());
-			
-			exits[1] = r.rooms[0];
-			exits[3] = r.rooms[8];
+			for (Entry<String, Room> entry : master.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 					
-			break;
+			return master;
 		case "A small Hallway":
-			System.out.println("Exits");
-			System.out.println("North: "+r.rooms[6].getname());
-			System.out.println("East: "+r.rooms[7].getname());
-			System.out.println("South: "+r.rooms[0].getname());
-			System.out.println("West: "+r.rooms[9].getname());
+			for (Entry<String, Room> entry : hall.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 			
-			exits[0] = r.rooms[6];
-			exits[1] = r.rooms[7];
-			exits[2] = r.rooms[0];
-			exits[3] = r.rooms[9];
-			
-			break;
+			return hall;
 		case "Downstairs Bathroom":
-			System.out.println("Exits");
-			System.out.println("South: "+r.rooms[5].getname());
+			for (Entry<String, Room> entry : bath1.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 			
-			exits[2] = r.rooms[5];
-			
-			break;
+			return bath1;
 		case "Downstairs Bedroom":
-			System.out.println("Exits");
-			System.out.println("West: "+r.rooms[5].getname());
+			for (Entry<String, Room> entry : bed1.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 			
-			exits[3] = r.rooms[5];
-			
-			break;
+			return bed1;
 		case "The Master Bathroom":
-			System.out.println("Exits");
-			System.out.println("East: "+r.rooms[4].getname());
+			for (Entry<String, Room> entry : mbath.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 			
-			exits[1] = r.rooms[4];
-			
-			break;
+			return mbath;
 		case "A small upstairs Hallway":
-			System.out.println("Exits");
-			System.out.println("East: "+r.rooms[11].getname());
-			System.out.println("South: "+r.rooms[5].getname());
-			System.out.println("Weat: "+r.rooms[10].getname());
+			for (Entry<String, Room> entry : hall2.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 			
-			exits[1] = r.rooms[11];
-			exits[2] = r.rooms[9];
-			exits[3] = r.rooms[10];
-			
-			break;
+			return hall2;
 		case "Upstairs Bathroom":
-			System.out.println("Exits");
-			System.out.println("East: "+r.rooms[9].getname());
+			for (Entry<String, Room> entry : bath2.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 			
-			exits[1] = r.rooms[9];
-			
-			break;
+			return bath2;
 		case "Upstairs Bedroom":
-			System.out.println("Exits");
-			System.out.println("West: "+r.rooms[9].getname());
+			for (Entry<String, Room> entry : bed2.entrySet()) {
+			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			}
 			
-			exits[3] = r.rooms[9];
-			
-			break;
+			return bed2;
 		
 		}
-		return exits;
+		
+		return null;
+		
 		
 	}
 		
-	public int getExit(String direction) {
-		int a = 0;
-	switch(direction) {
-		case "north":
-			a = 0;
-			break;
-		case "east":
-			a = 1;
-			break;
-		case "south":
-			a = 2;
-			break;
-		case "west":
-			a=3;	
-			break;
+	public Room getExit(String direction, Map<String, Room> Room,Player one) {
+		//inputs: direction and exits
+		init();
+		//look at keys and display value
+		Room room = one.getCurrentRoom();
+		RoomManager r = new RoomManager();
+		r.init();
+		try {
+		for (Entry<String, Room> entry : Room.entrySet()) {
+			String a=entry.getKey().toString().toLowerCase();
+			if(a.equalsIgnoreCase(direction))
+			{
+				room =entry.getValue();
+		    
+		    return room;
+			}
+		}}catch(java.lang.NullPointerException exception ) {
+		
 		}
-	return a;
+		System.out.println("Can not go that way");
+		return room;
+
+		
 		
 		
 	}

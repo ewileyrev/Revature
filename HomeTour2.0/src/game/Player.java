@@ -4,13 +4,21 @@ import fixtures.Room;
 
 public class Player {
 
-	Room currentRoom;
+	private Room currentRoom;
 	
 	public void init() {
 	RoomManager r = new RoomManager();
 	r.init();
 		
-	currentRoom= r.startingRoom;
+	setCurrentRoom(r.startingRoom);
+	}
+
+	public Room getCurrentRoom() {
+		return currentRoom;
+	}
+
+	public void setCurrentRoom(Room currentRoom) {
+		this.currentRoom = currentRoom;
 	}
 
 }

@@ -10,13 +10,13 @@ Room startingRoom;
 public void init() {
 
 		
-		Room LivingRoom = new Room(
+		Room living = new Room(
 				"The Living Room",
 				"A living room with a couch and tv",
 				"The living room to the house. A dinning room is open to the east. A door to the west leading to the master bedroom, and a hallway to the north."
 				);
-		this.rooms[0] = LivingRoom;
-		this.startingRoom = LivingRoom;
+		this.rooms[0] = living;
+		this.startingRoom = living;
 		
 		Room DinningRoom = new Room(
 				"The Dinning Room",
