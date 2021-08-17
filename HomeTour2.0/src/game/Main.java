@@ -73,7 +73,7 @@ public class Main {
 			System.out.println("The light switch was flipped for the "+one.getCurrentRoom().getname()+"\n");
 			break;
 		case "sit":
-			System.out.println("You sit on the "+one.getCurrentRoom().getname() +" floor");
+			System.out.println("You sat on the "+one.getCurrentRoom().getname() +"'s floor");
 			break;
 		default:
 			System.out.println("Please enter a action(go, lights, sit)");

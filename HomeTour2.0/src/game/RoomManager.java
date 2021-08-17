@@ -18,12 +18,12 @@ public void init() {
 		this.rooms[0] = living;
 		this.startingRoom = living;
 		
-		Room DinningRoom = new Room(
-				"The Dinning Room",
+		Room DiningRoom = new Room(
+				"The Dining Room",
 				"A dinning room with a table",
 				"This open dinning room has window to the east and south to let in the morning sun. A glass table seats in the middle of the room."
 				);
-		this.rooms[1] = DinningRoom;
+		this.rooms[1] = DiningRoom;
 		
 		Room Kitchen = new Room(
 				"The Kitchen",
@@ -32,12 +32,12 @@ public void init() {
 				);
 		this.rooms[2] = Kitchen;
 				
-		Room LaundaryRoom = new Room(
-				"The Laundary Room",
-				"A small laundary room",
+		Room laundryRoom = new Room(
+				"The laundry Room",
+				"A small laundry room",
 				"A small room with only a washer and dryer in it."
 				);
-		this.rooms[3] = LaundaryRoom;
+		this.rooms[3] = laundryRoom;
 		
 		Room MasterRoom = new Room(
 				"The Master Bedroom",

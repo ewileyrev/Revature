@@ -10,9 +10,9 @@ import game.RoomManager;
 
 public class Room extends Fixture{
 	Map<String,Room> living = new HashMap<>();
-	Map<String,Room> dinning = new HashMap<>();
+	Map<String,Room> dining = new HashMap<>();
 	Map<String,Room> kitchen = new HashMap<>();
-	Map<String,Room> laundary = new HashMap<>();
+	Map<String,Room> laundry = new HashMap<>();
 	Map<String,Room> master = new HashMap<>();
 	Map<String,Room> hall = new HashMap<>();
 	Map<String,Room> bath1 = new HashMap<>();
@@ -25,18 +25,23 @@ public class Room extends Fixture{
 	public void init() {
 		RoomManager r = new RoomManager();
 		r.init();
+		//living Room exits
 		living.put("North", r.rooms[5]);
 		living.put("East", r.rooms[1]);
 		living.put("West", r.rooms[4]);
 		
-		dinning.put("North", r.rooms[2]);
-		dinning.put("West", r.rooms[0]);
+		//dining Room exits
+		dining.put("North", r.rooms[2]);
+		dining.put("West", r.rooms[0]);
 		
+		//kitchen exits
 		kitchen.put("North", r.rooms[3]);
 		kitchen.put("South", r.rooms[1]);
 
-		laundary.put("South",r.rooms[2]);
+		//laundry exits
+		laundry.put("South",r.rooms[2]);
 
+		//master bedroom exits
 		master.put("East",r.rooms[0]);
 		master.put("West",r.rooms[8]);
 		
@@ -82,24 +87,24 @@ public class Room extends Fixture{
 			}
 			
 			return living;
-		case "The Dinning Room":
-			for (Entry<String, Room> entry : dinning.entrySet()) {
+		case "The dining Room":
+			for (Entry<String, Room> entry : dining.entrySet()) {
 			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
 			}
 			
-			return dinning;
+			return dining;
 		case "The Kitchen":
 			for (Entry<String, Room> entry : kitchen.entrySet()) {
 			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
 			}
 			
 			return kitchen;
-		case "The Laundary Room":
-			for (Entry<String, Room> entry : laundary.entrySet()) {
+		case "The laundry Room":
+			for (Entry<String, Room> entry : laundry.entrySet()) {
 			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
 			}
 			
-			return laundary;
+			return laundry;
 		case "The Master Bedroom":
 			for (Entry<String, Room> entry : master.entrySet()) {
 			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
@@ -163,7 +168,7 @@ public class Room extends Fixture{
 		Room room = one.getCurrentRoom();
 		RoomManager r = new RoomManager();
 		r.init();
-		try {
+		
 		for (Entry<String, Room> entry : Room.entrySet()) {
 			String a=entry.getKey().toString().toLowerCase();
 			if(a.equalsIgnoreCase(direction))
@@ -172,10 +177,8 @@ public class Room extends Fixture{
 		    
 		    return room;
 			}
-		}}catch(java.lang.NullPointerException exception ) {
-		
 		}
-		System.out.println("Can not go that way");
+		System.out.println("Please enter a valid direction");
 		return room;
 
 		
