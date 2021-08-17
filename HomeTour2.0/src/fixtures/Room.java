@@ -9,6 +9,8 @@ import game.RoomManager;
 
 
 public class Room extends Fixture{
+	
+	//create a map of each room to find the exits
 	Map<String,Room> living = new HashMap<>();
 	Map<String,Room> dining = new HashMap<>();
 	Map<String,Room> kitchen = new HashMap<>();
@@ -45,23 +47,30 @@ public class Room extends Fixture{
 		master.put("East",r.rooms[0]);
 		master.put("West",r.rooms[8]);
 		
+		//downstairs hallway exits
 		hall.put("North",r.rooms[6]);
 		hall.put("East",r.rooms[7]);
 		hall.put("South",r.rooms[0]);
 		hall.put("West",r.rooms[9]);
-
+		
+		//downstairs bathroom
 		bath1.put("South",r.rooms[5]);
 
+		//downstairs bedroom
 		bed1.put("West",r.rooms[5]);
 
+		//master bath
 		mbath.put("East",r.rooms[4]);
 
+		//upstairs hallway
 		hall2.put("East",r.rooms[11]);
 		hall2.put("South",r.rooms[5]);
 		hall2.put("West",r.rooms[10]);
 
+		//upstairs bathroom
 		bath2.put("East",r.rooms[9]);
 
+		//upstairs bedroom
 		bed2.put("West",r.rooms[9]);
 
 
@@ -78,7 +87,7 @@ public class Room extends Fixture{
 		init();
 		String a = currentRoom.getname();
 		
-		
+		//used to display the exits for the current room and return the room map
 		switch (a) {
 		case "The Living Room":
 			
@@ -169,6 +178,7 @@ public class Room extends Fixture{
 		RoomManager r = new RoomManager();
 		r.init();
 		
+		//checks to see if the direction entered is valid and return the new room
 		for (Entry<String, Room> entry : Room.entrySet()) {
 			String a=entry.getKey().toString().toLowerCase();
 			if(a.equalsIgnoreCase(direction))

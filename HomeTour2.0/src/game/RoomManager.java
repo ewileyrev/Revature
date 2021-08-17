@@ -6,14 +6,14 @@ public class RoomManager {
 public Room[] rooms = new Room[12];
 Room startingRoom;
 
-
+	//defines the rooms 
 public void init() {
 
 		
 		Room living = new Room(
 				"The Living Room",
 				"A living room with a couch and tv",
-				"The living room to the house. A dinning room is open to the east. A door to the west leading to the master bedroom, and a hallway to the north."
+				"The living room to the house. A dining room is open to the east. A door to the west leading to the master bedroom, and a hallway to the north."
 				);
 		this.rooms[0] = living;
 		this.startingRoom = living;
@@ -21,7 +21,7 @@ public void init() {
 		Room DiningRoom = new Room(
 				"The Dining Room",
 				"A dinning room with a table",
-				"This open dinning room has window to the east and south to let in the morning sun. A glass table seats in the middle of the room."
+				"This open dining room has window to the east and south to let in the morning sun. A glass table seats in the middle of the room."
 				);
 		this.rooms[1] = DiningRoom;
 		
@@ -98,10 +98,7 @@ public void init() {
 	}
 
 
-public Room getRooms(int x) {
-	Room r = rooms[x];
-	return r;
-}
+
 
 
 }
