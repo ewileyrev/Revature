@@ -31,8 +31,8 @@ public class Main {
 		game = parse(a, one,exits);
 	
 		}
-		s.close();
 		
+		System.out.println("out");
 
 	}
 		
