@@ -24,6 +24,8 @@ public class Room extends Fixture{
 	Map<String,Room> bath2 = new HashMap<>();
 	Map<String,Room> bed2 = new HashMap<>();
 	
+	
+	//used to define the rooms exits
 	public void init() {
 		RoomManager r = new RoomManager();
 		r.init();
@@ -81,6 +83,7 @@ public class Room extends Fixture{
 		
 	}
 		
+	//display exits of current room and returns the exits
 	public Map<String, Room> getExits(Room currentRoom) {
 		RoomManager r = new RoomManager();
 		r.init();
@@ -170,6 +173,7 @@ public class Room extends Fixture{
 		
 	}
 		
+	//returns next room if direction is valid
 	public Room getExit(String direction, Map<String, Room> Room,Player one) {
 		//inputs: direction and exits
 		init();
@@ -195,7 +199,4 @@ public class Room extends Fixture{
 		
 		
 	}
-
-
-
 }

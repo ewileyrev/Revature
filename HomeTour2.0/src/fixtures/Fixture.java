@@ -6,19 +6,17 @@ public class Fixture {
 	private String shortDescription;
 	private String longDescription;
 	
-
-	
 	public Fixture(String name, String shortDescription, String longDescription) {
 		this.name = name;
 		this.setShortDescription(shortDescription);
 		this.setLongDescription(longDescription);
 		}
 	
-	
 	//used to get the name of the room
 	public String getname() {
 		return this.name;
 	}
+	
 	//used to get the short of the room
 	public String getShortDescription() {
 		return shortDescription;
@@ -38,6 +36,4 @@ public class Fixture {
 	public void setLongDescription(String longDescription) {
 		this.longDescription = longDescription;
 	}
-	
-
-}
+	}

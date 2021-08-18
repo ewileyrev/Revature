@@ -6,7 +6,7 @@ public class RoomManager {
 public Room[] rooms = new Room[12];
 Room startingRoom;
 
-	//defines the rooms 
+	//used to define rooms
 public void init() {
 
 		
@@ -96,9 +96,4 @@ public void init() {
 		this.rooms[11] = Bed2;
 		
 	}
-
-
-
-
-
 }
