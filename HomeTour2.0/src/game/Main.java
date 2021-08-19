@@ -2,9 +2,6 @@ package game;
 
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Map.Entry;
-
-import fixtures.Fixture;
 import fixtures.Room;
 
 
@@ -17,23 +14,14 @@ public class Main {
 		Player one = new Player();
 		one.init();
 		
-		System.out.println("go will move to the room specified \nlights will flip the light switch \nsit you will set down in current room\n");
+		System.out.println("go will move to the room specified \nlights will flip the light switch \nsit you will set down in current room\nor quit");
 		while(game){	
 		String[] a = null;
 		Map<String, Room> exits = printRoom(one);
-		//try and catch to see if the input option is valid
-		try {
 		a = collectInput(one);
-		}catch(java.lang.NullPointerException exception ) {
-			System.out.println("Can not go that way");
-			
-		}
 		game = parse(a, one,exits);
-	
 		}
-		
-		System.out.println("out");
-
+		s.close();
 	}
 		
 	//prints out description on the room and its exit
@@ -53,7 +41,6 @@ public class Main {
 		String in = s.nextLine();
 		String[] input = in.split(" ");
 		return input;
-
 	}
 		
 	//used to determine action being done and change current room if needed
@@ -70,7 +57,7 @@ public class Main {
 			try {
 			currentRoom = room.getExit(command[1], exits,one);
 			one.setCurrentRoom(currentRoom);
-			}catch(java.lang.ArrayIndexOutOfBoundsException exception){
+			}catch(ArrayIndexOutOfBoundsException exception){
 				System.out.println("Please enter a direction after go");
 			}
 			break;
@@ -84,7 +71,7 @@ public class Main {
 			System.out.println("Quitting");
 			return false;
 		default:
-			System.out.println("Please enter a action(go, lights, sit)");
+			System.out.println("Please enter a action(go, lights, sit, quit)");
 		}
 		return true;
 	}
