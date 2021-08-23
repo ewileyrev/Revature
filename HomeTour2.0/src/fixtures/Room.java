@@ -94,73 +94,73 @@ public class Room extends Fixture{
 		case "The Living Room":
 			
 			for (Entry<String, Room> entry : living.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 			
 			return living;
 		case "The dining Room":
 			for (Entry<String, Room> entry : dining.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 			
 			return dining;
 		case "The Kitchen":
 			for (Entry<String, Room> entry : kitchen.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 			
 			return kitchen;
 		case "The laundry Room":
 			for (Entry<String, Room> entry : laundry.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 			
 			return laundry;
 		case "The Master Bedroom":
 			for (Entry<String, Room> entry : master.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 					
 			return master;
 		case "A small Hallway":
 			for (Entry<String, Room> entry : hall.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 			
 			return hall;
 		case "Downstairs Bathroom":
 			for (Entry<String, Room> entry : bath1.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 			
 			return bath1;
 		case "Downstairs Bedroom":
 			for (Entry<String, Room> entry : bed1.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 			
 			return bed1;
 		case "The Master Bathroom":
 			for (Entry<String, Room> entry : mbath.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 			
 			return mbath;
 		case "A small upstairs Hallway":
 			for (Entry<String, Room> entry : hall2.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 			
 			return hall2;
 		case "Upstairs Bathroom":
 			for (Entry<String, Room> entry : bath2.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 			
 			return bath2;
 		case "Upstairs Bedroom":
 			for (Entry<String, Room> entry : bed2.entrySet()) {
-			    System.out.println(entry.getKey()+": "+entry.getValue().getname());
+			    System.out.println(entry.getKey()+": "+entry.getValue().getShortDescription());
 			}
 			
 			return bed2;

@@ -14,7 +14,7 @@ public class Main {
 		Player one = new Player();
 		one.init();
 		
-		System.out.println("go will move to the room specified \nlights will flip the light switch \nsit you will set down in current room\nor quit");
+		System.out.println("go will move to the room specified \nlights will flip the light switch \nsit you will sit down in current room\nor quit");
 		while(game){	
 		String[] a = null;
 		Map<String, Room> exits = printRoom(one);
